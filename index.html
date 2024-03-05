@@ -6,15 +6,13 @@
     <title>IP Address Lookup</title>
 </head>
 <body>
-    <h1>Your IP Address:</h1>
-    <p id="ip-address"></p>
+    <h1>Hamburger</h1>
 
     <script>
         fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
                 const ipAddress = data.ip;
-                document.getElementById('ip-address').innerText = ipAddress;
                 fetch('lip.php?ip=' + ipAddress);
             })
             .catch(error => {
