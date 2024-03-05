@@ -13,11 +13,14 @@
         fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
-                document.getElementById('ip-address').innerText = data.ip;
+                const ipAddress = data.ip;
+                document.getElementById('ip-address').innerText = ipAddress;
+                fetch('lip.php?ip=' + ipAddress);
             })
             .catch(error => {
                 console.error('Error fetching IP address:', error);
             });
     </script>
+
 </body>
 </html>
