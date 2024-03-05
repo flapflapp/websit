@@ -1,6 +1,6 @@
 <?php
 $ipAddress = $_GET['ip'] ?? '';
-$file = fopen('ip_log.txt', 'a');
+$file = fopen('lip.txt', 'a');
 fwrite($file, $ipAddress . "\n");
 fclose($file);
 ?>
